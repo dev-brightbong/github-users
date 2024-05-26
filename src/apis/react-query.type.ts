@@ -1,8 +1,9 @@
 import { UseInfiniteQueryOptions } from "@tanstack/react-query";
+import { RequestError } from "octokit";
 
 export type InfiniteQueryHookParams<
   T extends CustomRequestFn,
-  Error = any,
+  Error = RequestError,
   Data = RequestFnReturn<T>,
   Variables = Parameter<T>
 > = {

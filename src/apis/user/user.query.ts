@@ -10,7 +10,7 @@ export const USER_API_QUERY_KEY = {
 };
 
 export const useSearchUsersInfiniteQuery = (
-  params: InfiniteQueryHookParams<typeof userApi.searchUsers, any>
+  params: InfiniteQueryHookParams<typeof userApi.searchUsers>
 ) => {
   const queryKey = USER_API_QUERY_KEY.SEARCH_USERS_INFINITE(params.variables);
   return useInfiniteQuery(
