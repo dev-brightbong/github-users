@@ -8,6 +8,7 @@ const BasisHeader = () => {
     <HStack
       as="header"
       position={["sticky", "-webkit-sticky"]}
+      zIndex={99}
       top={0}
       w="100%"
       bgColor="white"

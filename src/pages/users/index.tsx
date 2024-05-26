@@ -1,8 +1,13 @@
-import React, { useEffect } from "react";
+import BasisLayout from "@/components/Layout/BasisLayout";
+import Users from "@/containers/Users";
+import React from "react";
 
 const UsersPage = () => {
-  useEffect(() => {}, []);
-  return <div>UsersPage</div>;
+  return (
+    <BasisLayout>
+      <Users />
+    </BasisLayout>
+  );
 };
 
 export default UsersPage;
