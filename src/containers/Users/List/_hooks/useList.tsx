@@ -1,14 +1,15 @@
 import { useSearchUsersInfiniteQuery } from "@/apis/user/user.query";
-import React, { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
 
 const useList = () => {
-  const [input, setInput] = useState("");
-  const [query, setQuery] = useState("");
-  const [fetchEnabled, setFetchEnabled] = useState(false);
+  const router = useRouter();
+  const query = router.query.query;
+  const fetchEnabled = !!query;
 
-  const { data, hasNextPage, isLoading, isFetching, fetchNextPage, refetch } =
+  const { data, hasNextPage, isLoading, isFetching, fetchNextPage } =
     useSearchUsersInfiniteQuery({
-      variables: { q: query },
+      variables: { q: String(query) },
       options: {
         enabled: fetchEnabled,
       },
@@ -18,36 +19,21 @@ const useList = () => {
     return data?.pages.flatMap((v) => v) || [];
   }, [data?.pages]);
 
-  const handleSearch = () => {
-    setFetchEnabled(true);
-    setQuery(input);
-  };
-
-  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setInput(value);
-  };
-
-  useEffect(() => {
-    if (fetchEnabled) {
-      refetch();
-    }
-  }, [query, fetchEnabled, refetch]);
+  const loadMore = ()=>{
+    fetchNextPage();
+  }
 
   return {
     state: {
-        input,
-        list,
-        fetchEnabled,
-        hasNextPage,
-        isLoading,
-        isFetching,
+      list,
+      fetchEnabled,
+      hasNextPage,
+      isLoading,
+      isFetching,
     },
     handler: {
-        fetchNextPage,
-        onChangeInput,
-        handleSearch,
-    }
+      loadMore,
+    },
   };
 };
 
