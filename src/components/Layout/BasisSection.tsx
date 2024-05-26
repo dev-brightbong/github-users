@@ -8,6 +8,7 @@ const BasisSection = ({ children, ...props }: BasisSectionProps) => {
   return (
     <VStack
       as="article"
+      pt="12px"
       px="8px"
       alignItems="flex-start"
       spacing={0}
