@@ -1,14 +1,9 @@
 import type { AppProps } from "next/app";
 
-import { ChakraProviders } from "@/provider/chakra-ui";
-import ReactQueryProvider from "@/provider/react-query";
+import withAppProvider from "@/hocs/withAppProvider";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ReactQueryProvider>
-      <ChakraProviders>
-        <Component {...pageProps} />
-      </ChakraProviders>
-    </ReactQueryProvider>
-  );
+function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
 }
+
+export default withAppProvider(App);
