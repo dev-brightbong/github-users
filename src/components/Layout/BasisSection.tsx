@@ -6,7 +6,13 @@ interface BasisSectionProps extends StackProps {
 }
 const BasisSection = ({ children, ...props }: BasisSectionProps) => {
   return (
-    <VStack as="article" px="8px" spacing={0} {...props}>
+    <VStack
+      as="article"
+      px="8px"
+      alignItems="flex-start"
+      spacing={0}
+      {...props}
+    >
       {children}
     </VStack>
   );
