@@ -13,13 +13,11 @@ interface CardProps extends StackProps {
 const Card = ({ username, profile, hasBookmark, ...props }: CardProps) => {
   return (
     <VStack px="12px" py="18px" bgColor={"gray.50"} {...props}>
-      {props.key}
       <HStack w="100%" align={"flex-start"} justifyContent={"space-between"}>
         <HStack _hover={{ cursor: "pointer" }}>
-          <StarIcon color="gray.300"/>
+          <StarIcon color="gray.300" />
           <Text textStyle="text-r">@{username}</Text>
         </HStack>
-
         <Image
           src={profile}
           alt={profile}
