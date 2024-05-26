@@ -14,8 +14,8 @@ const Card = ({ username, profile, hasBookmark, ...props }: CardProps) => {
   return (
     <VStack px="12px" py="18px" bgColor={"gray.50"} {...props}>
       <HStack w="100%" align={"flex-start"} justifyContent={"space-between"}>
-        <HStack>
-          <StarIcon />
+        <HStack _hover={{ cursor: "pointer" }}>
+          <StarIcon color="gray.300"/>
           <Text textStyle="text-r">@{username}</Text>
         </HStack>
 
