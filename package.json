@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "yarn run theme",
+    "theme": "chakra-cli tokens src/configs/theme/index.ts"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -22,6 +24,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^2.4.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
