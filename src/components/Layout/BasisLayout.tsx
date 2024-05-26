@@ -19,6 +19,7 @@ const BasisLayout = ({
         as="main"
         aria-label="메인 컨텐츠 영역"
         aria-roledescription="메인 컨텐츠 영역"
+        spacing={0}
         pt="52px"
         px="16px"
         m="0 auto"
