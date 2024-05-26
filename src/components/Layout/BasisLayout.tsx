@@ -2,7 +2,6 @@ import React from "react";
 
 import { Box, VStack } from "@chakra-ui/react";
 import BasisHeader from "../Header/BasisHeader";
-import styled from "@emotion/styled";
 
 interface BasisLayoutProps {
   header?: React.ReactNode;
