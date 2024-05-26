@@ -18,7 +18,7 @@ export const useSearchUsersInfiniteQuery = (
     ({ pageParam }) => {
       return userApi.searchUsers({
         ...params.variables,
-        page: pageParam as number | undefined,
+        page: pageParam,
       });
     },
     {
