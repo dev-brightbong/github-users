@@ -6,12 +6,18 @@ export type BookmarkType = Awaited<SearchUserType>;
 
 type BookmarkStoreType = {
   bookmarks: BookmarkType;
+  setBookmarks: (bookmarks: BookmarkType) => void;
   add: (bookmark: BookmarkType[number]) => void;
   remove: (id: number) => void;
 };
 
 const useBookmarkStore = create<BookmarkStoreType>()((set) => ({
   bookmarks: [],
+  setBookmarks: (_bookmarks) => {
+    set(() => ({
+      bookmarks: _bookmarks,
+    }));
+  },
   add: (_bookmark) =>
     set((state) => ({
       bookmarks: [...state.bookmarks, _bookmark],
