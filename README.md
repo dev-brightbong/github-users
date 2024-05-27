@@ -21,7 +21,7 @@ NEXT_PUBLIC_TOKEN=<GITHUB_ACCESS_TOKEN>
 ## 실행 방법
 
 ```bash
-yarn run dev || yarn dev
+yarn && yarn dev
 ```
 
 ## 구현 사항
