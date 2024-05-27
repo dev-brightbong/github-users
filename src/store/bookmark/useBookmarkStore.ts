@@ -4,7 +4,7 @@ import { create } from "zustand";
 export type SearchUserType = ReturnType<typeof userApi.searchUsers>;
 export type BookmarkType = Awaited<SearchUserType>;
 
-type BookmarkStoreType = {
+export type BookmarkStoreType = {
   bookmarks: BookmarkType;
   setBookmarks: (bookmarks: BookmarkType) => void;
   add: (bookmark: BookmarkType[number]) => void;
