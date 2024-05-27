@@ -1,3 +1,7 @@
+
+/**
+ * @description 로컬스토리지 클래스 입니다. 스토리지 생성 시 key값을 넣어 확장해 사용할 수 있습니다.
+ */
 export class WebLocalStorage<Data> {
   data: Data | null = null;
   storage: Storage | null = typeof window === "undefined" ? null : localStorage;

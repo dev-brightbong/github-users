@@ -6,6 +6,11 @@ interface BookmarkHandlerProps {
   handler: Omit<BookmarkStoreType, "bookmarks">;
 }
 
+/**
+ * @description 북마크의 이벤트 처리를 수행하는 훅입니다.
+ * @param state @param handler
+ * @returns
+ */
 export const useBookmarkHandler = ({
   state,
   handler,

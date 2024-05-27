@@ -1,6 +1,9 @@
 import { UseInfiniteQueryOptions } from "@tanstack/react-query";
 import { RequestError } from "octokit";
 
+/**
+ * @description InfiniteQuery의 param을 정의한 타입입니다.
+ */
 export type InfiniteQueryHookParams<
   T extends CustomRequestFn,
   Error = RequestError,

@@ -11,6 +11,9 @@ export type BookmarkStoreType = {
   remove: (id: number) => void;
 };
 
+/**
+ * @description 북마크의 Zustand 스토어 입니다.
+ */
 const useBookmarkStore = create<BookmarkStoreType>()((set) => ({
   bookmarks: [],
   setBookmarks: (_bookmarks) => {
