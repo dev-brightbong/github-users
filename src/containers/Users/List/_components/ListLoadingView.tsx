@@ -1,8 +1,16 @@
 import React from "react";
 
-import { Box, HStack, Skeleton, SkeletonCircle } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Skeleton,
+  SkeletonCircle,
+  StackProps,
+} from "@chakra-ui/react";
 
-const ListLoadingView = () => {
+interface ListLoadingViewProps extends StackProps {}
+
+const ListLoadingView = ({ ...props }: ListLoadingViewProps) => {
   return (
     <Box
       px="20px"
@@ -11,6 +19,8 @@ const ListLoadingView = () => {
       bgColor={"gray.50"}
       borderRadius={"xs"}
       w="100%"
+      mb="24px"
+      {...props}
     >
       <HStack align="flex-start">
         <HStack w="100%" justifyContent={"space-between"}>

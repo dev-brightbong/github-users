@@ -12,7 +12,7 @@ export const useBookmarkHandler = ({
 }: BookmarkHandlerProps) => {
   const hasBookmark = (_id: number) => {
     const index = state.findIndex(({ id }) => id === _id);
-    return index === -1;
+    return index !== -1;
   };
 
   const addBookmark = (_bookmark: BookmarkType[number]) => {

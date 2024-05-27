@@ -1,6 +1,6 @@
+import React, { memo, useState } from "react";
 import { Button, Input, InputGroup, InputRightAddon } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
 
 const SearchInput = () => {
   const router = useRouter();
@@ -32,4 +32,4 @@ const SearchInput = () => {
   );
 };
 
-export default SearchInput;
+export default memo(SearchInput);
