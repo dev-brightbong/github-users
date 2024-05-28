@@ -4,7 +4,11 @@ import useBookmarkStore from "./useBookmarkStore";
 import { useBookmarkHandler } from "./useBookmarkHandler";
 
 const useBookmark = () => {
-  const { bookmarks, setBookmarks, add, remove } = useBookmarkStore();
+  const bookmarks = useBookmarkStore((state) => state.bookmarks);
+  const add = useBookmarkStore((state) => state.add);
+  const remove = useBookmarkStore((state) => state.remove);
+  const setBookmarks = useBookmarkStore((state) => state.setBookmarks);
+
   const { addBookmark, removeBookmark, hasBookmark } = useBookmarkHandler({
     state: bookmarks,
     handler: {
