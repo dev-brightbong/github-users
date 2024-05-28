@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { useSearchUsersInfiniteQuery } from "@/apis/user/user.query";
 
-const useList = () => {
+const useUserList = () => {
   const router = useRouter();
   const query = router.query.query;
   const fetchEnabled = !!query;
@@ -37,4 +37,4 @@ const useList = () => {
   };
 };
 
-export default useList;
+export default useUserList;

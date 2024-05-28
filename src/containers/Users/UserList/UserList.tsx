@@ -1,6 +1,5 @@
 import React, { Children } from "react";
-
-import useList from "./_hooks/useList";
+import useUserList from "./_hooks/useUserList";
 import LoadingView from "@/components/LoadingView";
 import InfinityList from "@/components/InfinityList";
 import UserCard from "@/components/UserCard/UserCard";
@@ -8,8 +7,8 @@ import ListLoadingView from "./_components/ListLoadingView";
 import ListEmptyView from "./_components/ListEmptyView";
 import SearchInput from "../SearchInput";
 
-const List = () => {
-  const { state, handler } = useList();
+const UserList = () => {
+  const { state, handler } = useUserList();
   return (
     <>
       <SearchInput />
@@ -39,4 +38,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default UserList;
