@@ -52,3 +52,4 @@ https://github-users-weld.vercel.app/
 - SSR에서 데이터를 로드하여 빠른 사용자 경험을 제공할 수 있습니다.
 - web-storage 클래스를 추상화 합니다. ex) cookie, session 등 확장할 수 있도록
 - 코드 린팅 포매팅 컨벤션 룰 적용
+- Zustand context Provider를 이용한 방식으로 구조 개선
