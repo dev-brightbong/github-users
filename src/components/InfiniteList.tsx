@@ -11,6 +11,12 @@ interface InfiniteListProps<T> extends StackProps {
   listEmptyComponent?: React.ReactNode;
 }
 
+/**
+ * @description 무한스크롤링 리스트 컴포넌트입니다.
+ * intersectionObserver를 이용해 bottomRef 영역에 닿을때를 감지해 onFetchMore를 트리거 합니다.
+ * @param param0
+ * @returns
+ */
 const InfiniteList = <T,>({
   data,
   hasMore,

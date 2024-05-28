@@ -3,7 +3,7 @@ import { BookmarkStoreType, BookmarkType } from "./useBookmarkStore";
 
 interface BookmarkHandlerProps {
   state: BookmarkType;
-  handler: Omit<BookmarkStoreType, "bookmarks">;
+  handler: Omit<BookmarkStoreType, "bookmarks" | "setBookmarks">;
 }
 
 /**
@@ -26,11 +26,6 @@ export const useBookmarkHandler = ({
     handler.add(_bookmark);
   };
 
-  const setBookmark = (_bookmarks: BookmarkType) => {
-    bookmarkStorage.set(_bookmarks);
-    handler.setBookmarks(_bookmarks);
-  };
-
   const removeBookmark = (id: number) => {
     const updatedBookmarks = state.filter((bookmark) => bookmark.id !== id);
     bookmarkStorage.set(updatedBookmarks);
@@ -41,6 +36,5 @@ export const useBookmarkHandler = ({
     hasBookmark,
     addBookmark,
     removeBookmark,
-    setBookmark,
   };
 };

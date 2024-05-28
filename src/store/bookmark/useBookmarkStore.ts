@@ -1,5 +1,5 @@
-import { userApi } from "@/apis/user/user.api";
 import { create } from "zustand";
+import { userApi } from "@/apis/user/user.api";
 
 export type SearchUserType = ReturnType<typeof userApi.searchUsers>;
 export type BookmarkType = Awaited<SearchUserType>;
@@ -12,7 +12,7 @@ export type BookmarkStoreType = {
 };
 
 /**
- * @description 북마크의 Zustand 스토어 입니다.
+ * @description 북마크의 스토어 입니다.
  */
 const useBookmarkStore = create<BookmarkStoreType>()((set) => ({
   bookmarks: [],
