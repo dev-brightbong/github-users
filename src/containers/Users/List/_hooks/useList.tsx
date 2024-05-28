@@ -1,6 +1,6 @@
-import { useSearchUsersInfiniteQuery } from "@/apis/user/user.query";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
+import { useSearchUsersInfiniteQuery } from "@/apis/user/user.query";
 
 const useList = () => {
   const router = useRouter();
@@ -19,9 +19,9 @@ const useList = () => {
     return data?.pages.flatMap((v) => v) || [];
   }, [data?.pages]);
 
-  const loadMore = ()=>{
+  const loadMore = () => {
     fetchNextPage();
-  }
+  };
 
   return {
     state: {

@@ -2,7 +2,7 @@ import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { Box, Center, Spinner, StackProps, VStack } from "@chakra-ui/react";
 import React from "react";
 
-interface InfiniteListProps<T> extends StackProps {
+interface InfinityListProps<T> extends StackProps {
   data?: T[];
   hasMore: boolean;
   isFetching: boolean;
@@ -17,7 +17,7 @@ interface InfiniteListProps<T> extends StackProps {
  * @param param0
  * @returns
  */
-const InfiniteList = <T,>({
+const InfinityList = <T,>({
   data,
   hasMore,
   isFetching,
@@ -25,7 +25,7 @@ const InfiniteList = <T,>({
   onFetchMore,
   listEmptyComponent,
   ...props
-}: InfiniteListProps<T>) => {
+}: InfinityListProps<T>) => {
   const { targetRef: bottomRef } = useIntersectionObserver({
     callback: () => {
       if (!isFetching && hasMore) {
@@ -64,4 +64,4 @@ const InfiniteList = <T,>({
   );
 };
 
-export default InfiniteList;
+export default InfinityList;

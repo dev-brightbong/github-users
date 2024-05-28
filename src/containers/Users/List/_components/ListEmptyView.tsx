@@ -1,6 +1,6 @@
-import { WarningIcon } from "@chakra-ui/icons";
-import { Box, Center, HStack, Text } from "@chakra-ui/react";
 import React from "react";
+import { WarningIcon } from "@chakra-ui/icons";
+import { Center, Text } from "@chakra-ui/react";
 
 const ListEmptyView = () => {
   return (
