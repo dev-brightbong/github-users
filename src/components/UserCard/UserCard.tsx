@@ -23,7 +23,14 @@ const UserCard = ({ hasBookmark, item, ...props }: UserCardProps) => {
   };
 
   return (
-    <VStack px="12px" py="18px" mb="24px" bgColor={"gray.50"} {...props}>
+    <VStack
+      w="100%"
+      px="12px"
+      py="18px"
+      mb="24px"
+      bgColor={"gray.50"}
+      {...props}
+    >
       <HStack w="100%" align={"flex-start"} justifyContent={"space-between"}>
         <HStack _hover={{ cursor: "pointer" }} onClick={onClickCard}>
           <StarIcon
