@@ -19,7 +19,11 @@ const BasisHeader = () => {
       <HStack as={"nav"} w={"100%"} justify={"space-between"} align={"center"}>
         <Image width={100} height={50} src={LOGO} alt={LOGO} />
 
-        <Text textStyle="title-middle-b" textAlign={"center"}>
+        <Text
+          wordBreak={"break-all"}
+          textStyle="title-middle-b"
+          textAlign={"center"}
+        >
           GitHub Users List
         </Text>
       </HStack>

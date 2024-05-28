@@ -36,7 +36,7 @@ const UserCard = ({ hasBookmark, item, ...props }: UserCardProps) => {
           <StarIcon
             color={handler.hasBookmark(item.id) ? "yellow.400" : "gray.300"}
           />
-          <Text textStyle="text-r">@{login}</Text>
+          <Text wordBreak={"break-all"} textStyle="text-r">@{login}</Text>
         </HStack>
 
         <Image

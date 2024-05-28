@@ -22,6 +22,7 @@ const TabMenu = () => {
           <NextAsLink href={href} width="100%" h="100%" key={id}>
             <Center w="100%" gap="20px">
               <Text
+                wordBreak={"break-all"}
                 textStyle="title-b"
                 borderBottom={router.pathname === `/${id}` ? "1px solid" : ""}
                 _hover={{ cursor: "pointer" }}
