@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
-type IO = {
+type UseIntersectionObserverProps = {
   callback: (
     entry?: IntersectionObserverEntry,
     observer?: IntersectionObserver
@@ -11,7 +11,7 @@ type IO = {
 const useIntersectionObserver = ({
   callback,
   options = { threshold: 0.5 },
-}: IO) => {
+}: UseIntersectionObserverProps) => {
   const targetRef = useRef<HTMLDivElement>(null);
 
   const handleIntersection = useCallback(
