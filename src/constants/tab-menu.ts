@@ -1,6 +1,4 @@
-export type TabMenuValueType = "users" | "bookmark";
-
-export const TAB_MENU: Record<"id", TabMenuValueType>[] = [
+export const TAB_MENU = [
   {
     id: "users",
   },
