@@ -1,6 +1,6 @@
 import useEffectOnce from "@/hooks/useEffectOnce";
 import useBookmarkStore from "@/store/bookmark/useBookmarkStore";
-import { bookmarkStorage } from "@/utils/web-storage/bookmark";
+import { bookmarkStorage } from "@/utils/web-storage/bookmark-storage";
 
 interface BookmarkProviderProps {
   children: React.ReactNode;
