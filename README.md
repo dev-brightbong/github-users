@@ -45,3 +45,4 @@ yarn && yarn dev
 
 - 유저정보를 클릭할 시 해당 유저의 github repository로 이동할 수 있습니다.
 - SSR에서 데이터를 로드하여 빠른 사용자 경험을 제공할 수 있습니다.
+- web-storage 클래스를 추상화 합니다. ex) cookie, session 등 확장할 수 있도록

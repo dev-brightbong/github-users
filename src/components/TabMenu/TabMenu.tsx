@@ -7,6 +7,7 @@ import NextAsLink from "../NextAsLink";
 
 const TabMenu = () => {
   const router = useRouter();
+  const pathname = router.pathname;
 
   const query = router.query.query;
 
@@ -19,7 +20,16 @@ const TabMenu = () => {
           : { pathname: `/${id}` };
 
         return (
-          <NextAsLink href={href} width="100%" h="100%" key={id}>
+          <NextAsLink
+            role="tab"
+            aria-label="탭 메뉴"
+            aria-selected={pathname === `/${id}`}
+            aria-controls={`${id}-tab-panel`}
+            href={href}
+            width="100%"
+            h="100%"
+            key={id}
+          >
             <Center w="100%" gap="20px">
               <Text
                 wordBreak={"break-all"}

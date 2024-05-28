@@ -29,6 +29,8 @@ const UserCard = ({ hasBookmark, item, ...props }: UserCardProps) => {
       py="18px"
       mb="24px"
       bgColor={"gray.50"}
+      role="article"
+      aria-labelledby="card-title"
       {...props}
     >
       <HStack w="100%" align={"flex-start"} justifyContent={"space-between"}>
@@ -36,7 +38,9 @@ const UserCard = ({ hasBookmark, item, ...props }: UserCardProps) => {
           <StarIcon
             color={handler.hasBookmark(item.id) ? "yellow.400" : "gray.300"}
           />
-          <Text wordBreak={"break-all"} textStyle="text-r">@{login}</Text>
+          <Text id="card-title" wordBreak={"break-all"} textStyle="text-r">
+            @{login}
+          </Text>
         </HStack>
 
         <Image
