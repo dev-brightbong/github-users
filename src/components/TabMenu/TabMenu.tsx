@@ -1,34 +1,25 @@
+import React from "react";
+import { useRouter } from "next/router";
 import { AtSignIcon, StarIcon } from "@chakra-ui/icons";
 import { Center, HStack, Text } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import React from "react";
+import { TAB_MENU } from "@/constants/tab-menu";
 import NextAsLink from "../NextAsLink";
-
-type RouterValueType = "users" | "bookmark";
-
-const routers: Record<"id", RouterValueType>[] = [
-  {
-    id: "users",
-  },
-  {
-    id: "bookmark",
-  },
-];
-
-type ExtractArrayElementType<T> = T extends readonly (infer U)[] ? U : never;
-
-type Router = ExtractArrayElementType<typeof routers>;
-type RouterId = Router["id"];
 
 const TabMenu = () => {
   const router = useRouter();
 
+  const query = router.query.query;
+
   return (
     <HStack justifyContent="space-between" w="100%">
-      {routers.map((item) => {
+      {TAB_MENU.map((item) => {
         const { id } = item;
+        const href = query
+          ? { pathname: `/${id}`, query: { query } }
+          : { pathname: `/${id}` };
+
         return (
-          <NextAsLink href={`/${id}`} width="100%" h="100%" key={id}>
+          <NextAsLink href={href} width="100%" h="100%" key={id}>
             <Center w="100%" gap="20px">
               <Text
                 textStyle="title-b"
